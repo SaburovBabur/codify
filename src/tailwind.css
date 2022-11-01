@@ -7,7 +7,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@100;400;500;600&display=swap");
 
 html {
-  @apply scroll-smooth;
+
+  @apply scroll-smooth h-full w-full overflow-x-hidden;
 }
 button, input, textarea {
   @apply outline-none focus:outline-none;
