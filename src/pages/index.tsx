@@ -1,6 +1,7 @@
 import { App } from 'components/Layout/App'
 import CourseCard from 'app/course/CourseCard'
 import Header from 'components/Header'
+import toast from 'react-hot-toast'
 
 function Home() {
   return (
@@ -44,9 +45,12 @@ function Home() {
             />
           </div>
           <div className='w-full flex-col md:flex-row flex items-center justify-center md:space-x-10 space-y-5 md:space-y-0 | md:pt-8'>
-            <button className='relative py-2.5 md:py-3 w-3/4 md:w-1/5 font-bold text-black group outline-none focus:outline-none'>
+            <a
+              href='#courses'
+              className='relative py-2.5 md:py-3 w-3/4 md:w-1/5 font-bold text-black group outline-none focus:outline-none'
+            >
               <span className='absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-1 md:-translate-x-2 -translate-y-1 md:-translate-y-2 bg-transparent border-2 border-gray-primary group-hover:translate-x-0 group-hover:translate-y-0'></span>
-              <span className='absolute inset-0 w-full h-full bg-gray-primary active:bg-blue-700 duration-200'></span>
+              <span className='absolute inset-0 w-full h-full bg-gray-primary active:bg-blue-700 hover:bg-blue-700 duration-200'></span>
               <span className='relative uppercase md:text-base text-white pointer-events-none | flex items-center justify-center'>
                 <p>Boshlash</p>
                 <svg
@@ -63,9 +67,12 @@ function Home() {
                   />
                 </svg>
               </span>
-            </button>
+            </a>
 
-            <button className='relative py-1.5 md:py-3 w-3/4 md:w-1/5  text-gray-400 group outline-none focus:outline-none'>
+            <button
+              onClick={() => toast.error('Platforma beta versiyada!')}
+              className='relative py-1.5 md:py-3 w-3/4 md:w-1/5  text-gray-400 group outline-none focus:outline-none'
+            >
               <span className='absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-1 md:-translate-x-2 -translate-y-1 md:-translate-y-2 bg-transparent border-2 border-gray-400 group-hover:translate-x-0 group-hover:translate-y-0'></span>
               <span className='absolute inset-0 w-full h-full border bg-white border-gray-400 text-gray-primary duration-200'></span>
               <span className='relative pointer-events-none uppercase md:text-base'>
@@ -75,40 +82,52 @@ function Home() {
           </div>
         </section>
 
-        <div className='courses | px-3 md:px-0 pt-20 md:pt-40'>
+        <div className='courses | px-3 md:px-0 pt-20 md:pt-40' id='courses'>
           <div className='available:courses'>
             <h1 className='text-3xl font-bold md:px-28 | text-gray-primary uppercase'>
               Kurslar:
             </h1>
             <div className='courses | grid xl:grid-cols-2 grid-cols-1 md:gap-x-20 md:gap-y-20 gap-y-10 | xl:px-28 pt-5'>
-              <a href='/course/react' className='relative'>
+              <div
+                onClick={() => toast.error('Tuzilmoqda..')}
+                className='relative'
+              >
                 <CourseCard
                   image={'https://i.ibb.co/Tr8Nntq/htmll.png'}
                   progress={0}
                   language={`HTML`}
                   level={1}
                 />
-              </a>
+              </div>
 
-              <a href='/course/react' className='relative'>
+              <div
+                onClick={() => toast.error('Tuzilmoqda..')}
+                className='relative'
+              >
                 <CourseCard
                   image={'https://i.ibb.co/pPCpKXK/css.png'}
                   progress={10}
                   language={`CSS`}
                   level={2}
                 />
-              </a>
+              </div>
 
-              <a href='/course/react' className='relative'>
+              <div
+                onClick={() => toast.error('Tuzilmoqda..')}
+                className='relative'
+              >
                 <CourseCard
                   image={'https://i.ibb.co/MDwS9Db/Group-230-2.png'}
                   progress={33}
                   language={`Javascript`}
                   level={2}
                 />
-              </a>
+              </div>
 
-              <a href='/course/react' className='relative'>
+              <div
+                onClick={() => toast.error('Tuzilmoqda..')}
+                className='relative'
+              >
                 <CourseCard
                   image={'https://i.ibb.co/JnR1qXW/Group-230-1.png'}
                   progress={45}
@@ -116,7 +135,7 @@ function Home() {
                   level={3}
                   new={true}
                 />
-              </a>
+              </div>
             </div>
           </div>
 
