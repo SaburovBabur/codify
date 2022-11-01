@@ -56,9 +56,9 @@ function CourseCard(props) {
         </div>
 
         {props.new && (
-          <div className='new:label | absolute -top-10 -right-10'>
+          <div className='new:label | absolute -top-10 -right-3 md:-top-10 md:-right-10'>
             <svg
-              className='h-24'
+              className='h-20 md:h-24'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 104 102'
