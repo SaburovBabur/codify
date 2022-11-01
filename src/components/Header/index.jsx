@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom'
 function Header(props) {
   return (
     <div className='container fcb | md:py-3 py-3 px-3'>
-      <Logo className='md:h-6 h-5' />
+      <Logo className='h-7' />
 
       <nav>
         <ul className='hidden flex-col md:flex md:flex-row justify-center items-between w-full'>
-          <li className='text-blue-700 | fc | mx-7 px-5 py-2 | text-sm | cursor-pointer'>
+          <li className='text-blue-700 | fc | mx-7 px-5 py-2 | text-base | cursor-pointer'>
             <span className='inline-block | mr-3 | w-2 h-2 | bg-blue-700'></span>
             Bosh sahifa
           </li>
 
-          <li className='text-[#888888] | fc | mx-7 px-5 | text-sm | cursor-pointer'>
+          <li className='text-[#888888] | fc | mx-7 px-5 | text-base | cursor-pointer'>
             Blog
           </li>
 
-          <li className='text-[#888888] | fc | mx-7 px-5 | text-sm | cursor-pointer'>
+          <li className='text-[#888888] | fc | mx-7 px-5 | text-base | cursor-pointer'>
             Biz haqimizda
           </li>
         </ul>
@@ -25,7 +25,7 @@ function Header(props) {
 
       <Link to={`/auth/register`}>
         <button className='duration-100 rounded-full px-3 py-1 hover:bg-blue-100/20 | flex items-center justify-center | text-base md:font-bold text-blue-700'>
-          <h3 className='text-sm md:text-base'>Kirish</h3>
+          <h3 className='text-base md:text-base'>Kirish</h3>
 
           <div className='svg | ml-3'>
             <svg

@@ -1,4 +1,4 @@
-import Progress from './Progress'
+import Progress from 'components/Progress'
 
 function CourseCard(props) {
   return (
@@ -8,7 +8,7 @@ function CourseCard(props) {
       }`}
     >
       <div className='flex justify-between'>
-        <div className='img | h-[4.5rem] w-[4.5rem] md:h-24 md:w-24 fcc shrink-0 grow-0'>
+        <div className='img | h-20 w-20 md:h-24 md:w-24 fcc shrink-0 grow-0'>
           <img
             src={props.image}
             alt={props.language + '_course_logo'}
@@ -16,7 +16,7 @@ function CourseCard(props) {
           />
         </div>
         <div className='info w-3/4'>
-          <h3 className='text-xl md:text-[1.6rem] font-extrabold | text-blue-900'>
+          <h3 className='text-2xl md:text-[1.6rem] font-extrabold | text-blue-900'>
             {props.language.toUpperCase()}
           </h3>
           <div className='progress | pt-1'>
