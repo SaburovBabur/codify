@@ -81,13 +81,18 @@ function Home() {
             </button>
           </div>
         </section>
+      </App.Container>
 
-        <div className='courses | px-3 md:px-0 pt-20 md:pt-40' id='courses'>
+      <section className='bg-[#060a2e0a]'>
+        <div
+          className='courses | px-3 md:px-0 mt-10 md:mt-30 py-10'
+          id='courses'
+        >
           <div className='available:courses'>
-            <h1 className='text-3xl font-bold md:px-28 | text-gray-primary uppercase'>
+            <h1 className='md:text-3xl text-2xl font-bold md:px-28 | text-gray-primary'>
               Kurslar:
             </h1>
-            <div className='courses | grid xl:grid-cols-2 grid-cols-1 md:gap-x-20 md:gap-y-20 gap-y-10 | xl:px-28 pt-5'>
+            <div className='courses | grid xl:grid-cols-2 grid-cols-1 md:gap-x-20 md:gap-y-20 gap-y-14 | xl:px-28 pt-5'>
               <div
                 onClick={() => toast.error('Tuzilmoqda..')}
                 className='relative'
@@ -141,12 +146,18 @@ function Home() {
 
           <div className='coming:courses | pt-12 md:pt-36'>
             <div className='available:courses'>
-              <h1 className='text-3xl md:text-3xl font-bold md:px-28 | text-gray-primary uppercase'>
+              <h1 className='md:text-3xl text-2xl font-bold md:px-28 | text-gray-primary'>
                 Tez orada:
               </h1>
 
               <div className='courses | grid xl:grid-cols-2 grid-cols-1 md:gap-x-20 md:gap-y-20 gap-y-14 | xl:px-28 pt-5'>
-                <div onClick={() => alert('Tez orata start beriladi!')}>
+                <div
+                  onClick={() =>
+                    toast('Tez orada!', {
+                      icon: '⌛',
+                    })
+                  }
+                >
                   <CourseCard
                     image={'https://i.ibb.co/9VrT1qB/Group.png'}
                     progress={0}
@@ -159,130 +170,130 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
 
-        <div className='why:we | pt-28 px-3'>
-          <h1 className='title | text-3xl font-extrabold | text-gray-primary | pt-5 pb-10 | text-center uppercase'>
-            <span className='gradient-blue'>Codify</span> qanday ishlaydi?
-          </h1>
-          <div className='space-y-16 md:space-y-0'>
-            <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
-              <div className='info | md:w-1/2'>
-                <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
-                  Teoriya.
-                </h1>
-                <p className='text-[#787878] text-sm w-3/4'>
-                  Sizning kelajagingiz uchun professionallar tomonidan
-                  tayyorlangan eng yaxshi maqolalarni o'qing
-                </p>
+      <div className='why:we w-full overflow-hidden | pt-28 px-3'>
+        <h1 className='title | text-3xl font-extrabold | text-gray-primary | pt-5 pb-10 | text-center uppercase'>
+          <span className='gradient-blue'>Codify</span> qanday ishlaydi?
+        </h1>
+        <div className='space-y-16 md:space-y-0'>
+          <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
+            <div className='info | md:w-1/2'>
+              <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
+                Teoriya.
+              </h1>
+              <p className='text-[#787878] text-sm w-3/4'>
+                Sizning kelajagingiz uchun professionallar tomonidan
+                tayyorlangan eng yaxshi maqolalarni o'qing
+              </p>
 
-                <ul className='pt-5'>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Qabul qilish oson
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Interaktiv rejim
-                  </li>
-                </ul>
-              </div>
+              <ul className='pt-5'>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Qabul qilish oson
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Interaktiv rejim
+                </li>
+              </ul>
+            </div>
 
-              <div className='hidden md:flex h-96 w-[1.1px] bg-gradient-to-b from-blue-300/50 to-blue-700 | relative flex-col items-center justify-center'>
-                <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
-                  1
-                </div>
-              </div>
-
-              <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
-                <img
-                  src='https://i.ibb.co/87D9wJ1/article.png'
-                  alt='codify.uz - Article'
-                  className='h-full object-contain mx-auto'
-                />
+            <div className='hidden md:flex h-96 w-[1.1px] bg-gradient-to-b from-blue-300/50 to-blue-700 | relative flex-col items-center justify-center'>
+              <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
+                1
               </div>
             </div>
 
-            <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
-              <div className='info | md:w-1/2'>
-                <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
-                  Amaliyot.
-                </h1>
-                <p className='text-[#787878] text-sm w-3/4'>
-                  Sizning kelajagingiz uchun professionallar tomonidan
-                  tayyorlangan eng yaxshi maqolalarni o'qing
-                </p>
+            <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
+              <img
+                src='https://i.ibb.co/87D9wJ1/article.png'
+                alt='codify.uz - Article'
+                className='h-full object-contain mx-auto'
+              />
+            </div>
+          </div>
 
-                <ul className='pt-5'>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Qabul qilish oson
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Interaktiv rejim
-                  </li>
-                </ul>
-              </div>
+          <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
+            <div className='info | md:w-1/2'>
+              <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
+                Amaliyot.
+              </h1>
+              <p className='text-[#787878] text-sm w-3/4'>
+                Sizning kelajagingiz uchun professionallar tomonidan
+                tayyorlangan eng yaxshi maqolalarni o'qing
+              </p>
 
-              <div className='hidden md:flex h-96 w-[1.1px] bg-blue-700 | relative flex-col items-center justify-center'>
-                <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
-                  2
-                </div>
-              </div>
+              <ul className='pt-5'>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Qabul qilish oson
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Interaktiv rejim
+                </li>
+              </ul>
+            </div>
 
-              <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
-                <img
-                  src='https://i.ibb.co/q7H8cm4/editor.png'
-                  alt='codify.uz - Article'
-                  className='h-full object-contain mx-auto'
-                />
+            <div className='hidden md:flex h-96 w-[1.1px] bg-blue-700 | relative flex-col items-center justify-center'>
+              <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
+                2
               </div>
             </div>
 
-            <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
-              <div className='info | md:w-1/2'>
-                <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
-                  Testlar.
-                </h1>
-                <p className='text-[#787878] text-sm w-3/4'>
-                  Sizning kelajagingiz uchun professionallar tomonidan
-                  tayyorlangan eng yaxshi maqolalarni o'qing
-                </p>
+            <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
+              <img
+                src='https://i.ibb.co/q7H8cm4/editor.png'
+                alt='codify.uz - Article'
+                className='h-full object-contain mx-auto'
+              />
+            </div>
+          </div>
 
-                <ul className='pt-5'>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Qabul qilish oson
-                  </li>
-                  <li className='| text-gray-primary | fc | mb-2'>
-                    <span className='text-lg mr-3'>✔</span> Interaktiv rejim
-                  </li>
-                </ul>
-              </div>
+          <div className='start | flex-col md:flex-row flex items-center justify-between relative'>
+            <div className='info | md:w-1/2'>
+              <h1 className='title | text-2xl md:text-3xl font-extrabold | text-gray-primary | pb-5'>
+                Testlar.
+              </h1>
+              <p className='text-[#787878] text-sm w-3/4'>
+                Sizning kelajagingiz uchun professionallar tomonidan
+                tayyorlangan eng yaxshi maqolalarni o'qing
+              </p>
 
-              <div className='hidden md:flex h-96 w-[1.1px] bg-gradient-to-b from-blue-700 to-blue-300/50 | relative flex-col items-center justify-center'>
-                <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
-                  3
-                </div>
-              </div>
+              <ul className='pt-5'>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Yoqimli interfeys
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Qabul qilish oson
+                </li>
+                <li className='| text-gray-primary | fc | mb-2'>
+                  <span className='text-lg mr-3'>✔</span> Interaktiv rejim
+                </li>
+              </ul>
+            </div>
 
-              <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
-                <img
-                  src='https://i.ibb.co/HTJ3VTh/exersice.png'
-                  alt='codify.uz - Article'
-                  className='h-full object-contain mx-auto'
-                />
+            <div className='hidden md:flex h-96 w-[1.1px] bg-gradient-to-b from-blue-700 to-blue-300/50 | relative flex-col items-center justify-center'>
+              <div className='box | bg-gradient-blue w-8 h-8 fcc text-white rounded-full | '>
+                3
               </div>
+            </div>
+
+            <div className='image | h-48 md:h-96 w-1/2 overflow-hidden md:relative absolute scale-150 md:scale-100 -right-1/4 top-10 md:top-0 md:right-0'>
+              <img
+                src='https://i.ibb.co/HTJ3VTh/exersice.png'
+                alt='codify.uz - Article'
+                className='h-full object-contain mx-auto'
+              />
             </div>
           </div>
         </div>
-      </App.Container>
+      </div>
 
-      <App.Footer className='shadow-300 mt-10 py-4 px-3'>
+      <App.Footer className='shadow-300 mt-10 py-7 px-3'>
         <div className='container flex items-center justify-between | relative'>
           <h3 className='text-gray-primary | font-bold | duration-200 hover:text-blue-700 | cursor-pointer'>
             Codify.uz{' '}
@@ -356,7 +367,7 @@ function Home() {
             </a>
           </ul>
 
-          <div className='px-3 hidden md:flex veev.uz | items-center | shadow-400 px-3 py-1 rounded-md'>
+          <div className='hidden md:flex veev.uz | items-center | shadow-400 px-3 py-3 rounded-md'>
             <svg
               className='h-10'
               viewBox='0 0 31 29'
@@ -396,7 +407,13 @@ function Home() {
 
             <div className='logo | text-gray-primary | pl-3 | text-sm'>
               <p className='text-xs'>Сайт поддерживается студией:</p>
-              <p className='font-bold'>veev.uz</p>
+              <a
+                href='https://www.informatika.uz'
+                target={`_blank`}
+                className='font-bold hover:cursor-alias'
+              >
+                Chaqmoq.agency
+              </a>
             </div>
           </div>
         </div>
