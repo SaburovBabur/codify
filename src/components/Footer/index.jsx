@@ -1,10 +1,9 @@
-import React from 'react'
-
 function Footer(props) {
   return (
-    <div className='container fcb | relative'>
+    <div className='container flex items-center justify-between | relative'>
       <h3 className='text-gray-primary | font-bold | duration-200 hover:text-blue-700 | cursor-pointer'>
-        Codify.uz <span className='opacity-0'>spandasdsadasdasdad</span>
+        Codify.uz{' '}
+        <span className='opacity-0 md:block hidden'>spandasdsadasdasdad</span>
       </h3>
 
       <ul className='fc'>
@@ -69,7 +68,7 @@ function Footer(props) {
         </a>
       </ul>
 
-      <div className='veev.uz | fc | shadow-400 px-3 py-1 rounded-md'>
+      <div className='hidden md:flex veev.uz | items-center | shadow-400 px-3 py-3 rounded-md'>
         <svg
           className='h-10'
           viewBox='0 0 31 29'
@@ -109,7 +108,13 @@ function Footer(props) {
 
         <div className='logo | text-gray-primary | pl-3 | text-sm'>
           <p className='text-xs'>Сайт поддерживается студией:</p>
-          <p className='font-bold'>veev.uz</p>
+          <a
+            href='https://www.informatika.uz'
+            target={`_blank`}
+            className='font-bold hover:cursor-alias'
+          >
+            Chaqmoq.agency
+          </a>
         </div>
       </div>
     </div>

@@ -116,18 +116,20 @@ html {
   padding-bottom: 0rem !important;
 }
 
-.no_padding_top:nth-child(-n + 4) {
-  @apply pt-0;
-}
+@media screen and (min-width: 1000px) { 
+  .no_padding_top:nth-child(-n + 4) {
+    @apply pt-0;
+  }
+  
+  .no_padding_top:nth-child(4n) {
+    @apply border-r-0;
+  }
 
-.no_padding_top:nth-child(4n) {
-  @apply border-r-0;
-}
-
-.no_padding_top:nth-last-child(2),
-.no_padding_top:nth-last-child(1),
-.no_padding_top:nth-last-child(0) {
-  @apply border-b-0 pb-5;
+  .no_padding_top:nth-last-child(2),
+  .no_padding_top:nth-last-child(1),
+  .no_padding_top:nth-last-child(0) {
+    @apply border-b-0 pb-5;
+  }
 }
 
 .move {

@@ -1,6 +1,5 @@
 import Logo from 'components/Logo'
 import { toast } from 'react-hot-toast'
-import { Link } from 'react-router-dom'
 
 function Header(props) {
   return (
@@ -25,7 +24,7 @@ function Header(props) {
       </nav>
 
       <button onClick={() => toast.error('Platforma beta versiyada!')}>
-        <button className='duration-100 rounded-full px-3 py-1 hover:bg-blue-100/20 | flex items-center justify-center | text-base md:font-bold text-blue-700'>
+        <div className='duration-100 rounded-full px-3 py-1 hover:bg-blue-100/20 | flex items-center justify-center | text-base md:font-bold text-blue-700'>
           <h3 className='text-base md:text-base'>Kirish</h3>
 
           <div className='svg | ml-3'>
@@ -43,7 +42,7 @@ function Header(props) {
               />
             </svg>
           </div>
-        </button>
+        </div>
       </button>
     </div>
   )

@@ -1,6 +1,15 @@
 import Progress from 'components/Progress'
 
-function CourseCard(props) {
+interface IProps {
+  wait?: boolean
+  new?: boolean
+  level?: number
+  image: string
+  language: string
+  progress: number
+}
+
+function CourseCard(props: IProps) {
   return (
     <div className='relative'>
       <div className='absolute w-full h-full bg-gray-primary/20'></div>
@@ -11,7 +20,7 @@ function CourseCard(props) {
         }`}
       >
         <div className='flex justify-between'>
-          <div className='img | h-20 w-20 md:h-24 md:w-24 fcc shrink-0 grow-0'>
+          <div className='img | h-20 w-20 md:h-24 md:w-24 flex items-center justify-center shrink-0 grow-0'>
             <img
               src={props.image}
               alt={props.language + '_course_logo'}

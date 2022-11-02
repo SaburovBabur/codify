@@ -1,35 +1,32 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation,
-} from 'react-router-dom'
+import { toast } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 function Button({ href, children }) {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const onClick = () => {
-    history.push(href)
+    ;(() =>
+      toast('Tez orada!', {
+        icon: '⌛',
+      }))()
+
+    navigate(href)
   }
 
   return (
     <button
-      className='relative px-16 py-3 font-bold text-black group outline-none focus:outline-none'
       onClick={onClick}
+      className='relative py-2.5 md:py-3 w-full md:w-1/5 font-bold text-black group outline-none focus:outline-none'
     >
-      <span className='absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-transparent border-2 border-gray-primary group-hover:translate-x-0 group-hover:translate-y-0'></span>
-      <span className='absolute inset-0 w-full h-full bg-gray-primary active:bg-blue-700 duration-200'></span>
-      <span className='relative text-white pointer-events-none | fcc'>
-        {children}
+      <span className='absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-1 md:-translate-x-2 -translate-y-1 md:-translate-y-2 bg-transparent border-2 border-gray-primary group-hover:translate-x-0 group-hover:translate-y-0'></span>
+      <span className='absolute inset-0 w-full h-full bg-gray-primary active:bg-blue-700 hover:bg-blue-700 duration-200'></span>
+      <span className='relative uppercase md:text-base text-white pointer-events-none | flex items-center justify-center'>
+        <p>{children}</p>
         <svg
           viewBox='0 0 20 20'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          className='h-5 ml-5'
+          className='h-4 md:h-5 ml-5'
         >
           <path
             fillRule='evenodd'
