@@ -6,6 +6,7 @@ import { Disclosure, Transition } from '@headlessui/react'
 import { Collapse } from 'react-collapse'
 import Footer from 'components/Footer'
 import Progress from 'components/Progress'
+import useScrollToTop from 'hooks/useScrollToTop'
 
 const style = {
   h1: `font-bold text-5xl text-gray-primary`,
@@ -46,6 +47,8 @@ const articles = [
 const slug = `what-is-jsx`
 
 function Course() {
+  useScrollToTop()
+
   const courseStarted = false
 
   return (
@@ -407,9 +410,9 @@ function Course() {
                 Haliham boshlamadingizmi?
               </h3>
 
-              <div className='w-full px-10 md:px-0'>
+              <div className='w-full flex items-center justify-center px-10 md:px-0'>
                 <If is={!courseStarted}>
-                  <Button href={`#`}>Kettik</Button>
+                  <Button href={`/lesson`}>Kettik</Button>
                 </If>
                 <If is={courseStarted}>
                   <Button href={`/course/${slug}/resume`}>Davom</Button>

@@ -1,21 +1,30 @@
-import './tailwind.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import toast, { Toaster } from 'react-hot-toast'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import Course from 'pages/course/[slug]'
 import Lesson from 'pages/lesson/[slug]'
 import Home from 'pages/index'
+import useScrollToTop from 'hooks/useScrollToTop'
+import './tailwind.css'
+// @ts-ignore
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 function App() {
+  useScrollToTop()
+  let location = useLocation()
+
   return (
     <>
       <Toaster />
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/course' element={<Course />} />
-          <Route path='/lesson' element={<Lesson />} />
-        </Routes>
-      </Router>
+
+      <TransitionGroup className={`h-full w-full`}>
+        <CSSTransition key={location.pathname} classNames='fade' timeout={250}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/course' element={<Course />} />
+            <Route path='/lesson' element={<Lesson />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
     </>
   )
 }

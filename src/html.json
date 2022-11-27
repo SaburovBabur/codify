@@ -1,0 +1,54 @@
+{
+  "id": 1,
+  "title": "HTML",
+  "image": "https://i.ibb.co/Tr8Nntq/htmll.png",
+  "description": "HTML (Hypertext Markup Language — hipermatnli belgilash tili) — SGML (Standard Generalized Markup Language — standart umumlashtirilgan belgilash tili) ga asoslangan va xalqaro ISO 8879 standartiga mos keluvchi til, xalqaro toʻrda ishlatiladi. Dunyodagi barcha saytlar asosi.",
+  "modules_count": "3",
+  "articles_count": "57",
+  "pracices_count": "127",
+  "projects_count": "3",
+  "topics": [
+    { "teglar": "/teglar" },
+    { "sarlavha": "/sarlavhalar" },
+    { "formalar": "/formalar" },
+    { "jadval": "/jadval-asosi" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Pokemon Game",
+      "image": "http://localhost:3000/pr_1.png",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "link": "/project/pokemon-game"
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "HTML - Kirish",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "ARTICLE",
+          "IDE": "EMBED",
+          "body": "Some long lesson... lorem Ipsum dolor sit amet...",
+          "html": "<h1>Embeddable HTML Code here...</h1>"
+        },
+        {
+          "id": 2,
+          "type": "LESSON",
+          "IDE": "HTML",
+          "body": "Some long lesson... lorem Ipsum dolor sit amet...",
+          "exercises": [
+            {
+              "id": 1,
+              "body": "Exercise body is here... | lorem Ipsum dolor sit amet...",
+              "solution_example": "~~~html <p>Solution written in markdown here..</p> ~~~",
+              "solution_in_regex": "/.{(1-9)(a-Z)}/i"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

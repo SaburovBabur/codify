@@ -1,4 +1,3 @@
-import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 function Button({ href, children }) {
@@ -11,7 +10,7 @@ function Button({ href, children }) {
   return (
     <button
       onClick={onClick}
-      className='relative py-2.5 md:py-3 w-full md:w-1/5 font-bold text-black group outline-none focus:outline-none'
+      className='relative py-2.5 md:py-3 w-full md:w-[30%] font-bold text-black group outline-none focus:outline-none'
     >
       <span className='absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-1 md:-translate-x-2 -translate-y-1 md:-translate-y-2 bg-transparent border-2 border-gray-primary group-hover:translate-x-0 group-hover:translate-y-0'></span>
       <span className='absolute inset-0 w-full h-full bg-gray-primary active:bg-blue-700 hover:bg-blue-700 duration-200'></span>

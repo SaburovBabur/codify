@@ -16,6 +16,10 @@ function Home() {
 
       <App.Container>
         <section className='h-full flex-col fc pt-24 pb-20 md:pt-20 | space-y-5 md:space-y-10 relative z-20'>
+          <div
+            className={`circle-animate md:w-72 w-36 h-32 md:h-64 absolute left-[-10rem] top-0 blur-[50px] opacity-50 md:opacity-30 duration-200 z-10`}
+          ></div>
+
           <h1 className='uppercase text-4xl md:text-5xl font-bold | z-20 relative'>
             <span className='gradient-blue'>6 oyda</span>
 
@@ -87,11 +91,10 @@ function Home() {
         </section>
       </App.Container>
 
-      <section className='bg-[#060a2e0a]'>
-        <div
-          className='courses | px-3 md:px-0 mt-10 md:mt-30 py-10'
-          id='courses'
-        >
+      <div id='courses'></div>
+
+      <section className='bg-[#c6fe6c24]'>
+        <div className='px-3 md:px-0 mt-10 md:mt-30 py-10'>
           <div className='available:courses'>
             <h1 className='md:text-3xl text-2xl font-bold md:px-28 | text-gray-primary'>
               Kurslar:

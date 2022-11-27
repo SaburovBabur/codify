@@ -79,6 +79,47 @@ html {
   }
 }
 
+.circle-animate {
+  background-color: #017aff;
+  animation: animateMove 10s infinite;
+}
+
+@keyframes animateMove {
+  0% {
+    background-color: #017aff;
+    transform: translateX(0%);
+  }
+
+  30% {
+    background-color: #017aff;
+  }
+
+  35% {
+    background-color: #ff00c7;
+  }
+
+  55% {
+    background-color: #ff00c7;
+    transform: translateX(50%);
+  }
+
+  60% {
+    background-color: #dac400;
+    transform: translateX(50%);
+  }
+
+  95% {
+    background-color: #dac400;
+  }
+
+  100% {
+    background-color: #017aff;
+    transform: translateX(0%);
+  }
+}
+
+
+
 .gradient-blue {
   background-image: linear-gradient(90deg, #017aff -3.88%, #21c8f6 88.09%);
 }

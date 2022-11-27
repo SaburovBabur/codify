@@ -15,24 +15,24 @@ function CourseCard(props: IProps) {
       <div className='absolute w-full h-full bg-gray-primary/20'></div>
 
       <div
-        className={`course z-10 hover:translate-x-2 hover:-translate-y-2 relative | bg-white flex flex-col justify-between px-2 py-2 md:px-5 md:py-5 | border border-gray-primary | cursor-pointer |  duration-200 ${
+        className={`course z-10 hover:translate-x-2 hover:-translate-y-2 relative | bg-white flex flex-col justify-between px-2 py-4 md:px-5 md:py-5 | border border-gray-primary | cursor-pointer |  duration-200 ${
           props.wait && 'cursor-not-allowed'
         }`}
       >
         <div className='flex justify-between'>
-          <div className='img | h-20 w-20 md:h-24 md:w-24 flex items-center justify-center shrink-0 grow-0'>
+          <div className='img | h-[5.5rem] w-[5.5rem] md:h-24 md:w-24 flex items-center justify-center shrink-0 grow-0'>
             <img
               src={props.image}
               alt={props.language + '_course_logo'}
               className='h-full object-contain'
             />
           </div>
-          <div className='info w-3/4'>
-            <h3 className='text-2xl md:text-[1.6rem] font-extrabold | text-blue-900'>
+          <div className='info w-3/4 pl-3 md:pl-0'>
+            <h3 className='text-3xl md:text-4xl font-extrabold | text-blue-900'>
               {props.language.toUpperCase()}
             </h3>
             <div className='progress | pt-1'>
-              <p className='text-blue-900 | block text-right | text-sm md:text-lg font-bold md:pb-2'>
+              <p className='text-blue-900 | block text-right | text-base md:text-lg font-bold md:pb-2'>
                 {props.progress}%
               </p>
               <Progress total={props.progress} key={3} size={`sm`} />
@@ -40,7 +40,7 @@ function CourseCard(props: IProps) {
           </div>
         </div>
 
-        <div className='course:info | pt-3 px-2 md:pt-8 | fcb text-xs md:text-base'>
+        <div className='course:info | pt-3 px-2 md:pt-8 | fcb text-sm md:text-base'>
           <div className='level | flex items-center | space-x-2'>
             <p className='text-gray-primary'>Daraja:</p>
 
