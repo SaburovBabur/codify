@@ -48,7 +48,7 @@ function Logo(props) {
       </svg>
 
       <p className='pl-2 text-xl md:text-2xl font-bold | text-gray-primary'>
-        codify
+        informatika
       </p>
     </Link>
   )

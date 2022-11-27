@@ -65,7 +65,7 @@ function Course() {
               <h1 className={style.h1}>HTML</h1>
 
               <If is={!courseStarted}>
-                <Button href={`#`}>Boshlash</Button>
+                <Button href={`/lesson`}>Boshlash</Button>
               </If>
               <If is={courseStarted}>
                 <Button href={`#`}>Davom</Button>

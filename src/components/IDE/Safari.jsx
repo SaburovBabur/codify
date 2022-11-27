@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import { useEffect, useState } from 'react'
-import Inspector from 'react-inspector'
+// import Inspector from 'react-inspector'
 import theme from './theme'
 
 export default function Safari(props) {
@@ -133,7 +133,6 @@ export default function Safari(props) {
       <div className='w-full h-full overflow-auto' id='codify-iframe-parent'>
         {/* FRAME */}
         <iframe
-          frameBorder='0'
           height='100%'
           width='100%'
           id={`codifyuz`}
@@ -226,7 +225,7 @@ export default function Safari(props) {
                         : 'items-center'
                     }`}
                   >
-                    {res.message.map((r) => (
+                    {/* {res.message.map((r) => (
                       <div className='mr-5'>
                         <Inspector
                           theme={theme}
@@ -234,7 +233,7 @@ export default function Safari(props) {
                           data={r}
                         />
                       </div>
-                    ))}
+                    ))} */}
                   </div>
                 ))}
             </div>

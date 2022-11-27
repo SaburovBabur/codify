@@ -5,11 +5,6 @@ function Button({ href, children }) {
   const navigate = useNavigate()
 
   const onClick = () => {
-    ;(() =>
-      toast('Tez orada!', {
-        icon: '⌛',
-      }))()
-
     navigate(href)
   }
 
