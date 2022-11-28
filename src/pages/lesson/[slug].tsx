@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useWindowSize from 'hooks/useWindowSize'
 
 import { Article } from 'app/lesson'
@@ -11,7 +11,8 @@ import { Disclosure, Transition } from '@headlessui/react'
 import { Dialog } from '@headlessui/react'
 import { Collapse } from 'react-collapse'
 import HamburgerMenu from 'react-hamburger-menu'
-
+import { toast } from 'react-hot-toast'
+let teasted = false
 const config = {
   files: {},
   dependencies: {},
@@ -93,12 +94,21 @@ const articles = [
 ]
 
 export default function Lesson() {
-  const [height] = useWindowSize()
+  const [height, width] = useWindowSize()
   const header = useRef()
   const [sidebar, setSidebar] = useState(false)
 
   function runTests(files) {
     // Check the user submitted code ...
+  }
+
+  if (width < 768 && !teasted) {
+    teasted = true
+    toast.error((t) => (
+      <span>
+        <p className='text-xs'>Noutbuk yoki komyuter orqali kiring!</p>
+      </span>
+    ))
   }
 
   return (
