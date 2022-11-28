@@ -2,16 +2,14 @@
 import { useRef, useState } from 'react'
 import useWindowSize from 'hooks/useWindowSize'
 
-import { Article } from './components'
-import IDE from './IDE'
+import { Article } from 'app/lesson'
+import IDE from 'app/lesson/IDE'
 import { App } from 'components/Layout/App'
 import Logo from 'components/Logo'
 import Progress from 'components/Progress'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Dialog } from '@headlessui/react'
 import { Collapse } from 'react-collapse'
-
-// @ts-ignore-next-line
 import HamburgerMenu from 'react-hamburger-menu'
 
 const config = {
@@ -118,9 +116,9 @@ export default function Lesson() {
               leave='opacity-100 -translate-x-12 duration-300'
               leaveFrom='opacity-100 translate-x-0'
               leaveTo='opacity-0 -translate-x-1/2'
-              className={`w-1/3 z-50 fixed inset-0`}
+              className={`w-11/12 md:w-1/3 z-50 fixed inset-0`}
             >
-              <div className='h-screen w-full z-[10000] bg-white shadow-300 | px-4 py-5 | overflow-y-auto'>
+              <div className='h-screen w-full z-[10000] bg-white shadow-300 | px-3 md:px-4 py-5 | overflow-y-auto'>
                 <div className='flex'>
                   <div className='img | h-20 w-20 fcc shrink-0 grow-0'>
                     <img
@@ -202,9 +200,9 @@ export default function Lesson() {
               enter='ease-out duration-100'
               enterFrom='opacity-0'
               enterTo='opacity-100'
-              // leave="ease-in duration-200"
-              // leaveFrom="opacity-100"
-              // leaveTo="opacity-0"
+              leave='ease-in duration-200'
+              leaveFrom='opacity-100'
+              leaveTo='opacity-0'
             >
               <Dialog.Overlay className='w-full h-full fixed inset-0 bg-gray-300 opacity-50' />
             </Transition.Child>
@@ -212,15 +210,16 @@ export default function Lesson() {
         </Transition>
 
         <header
-          className={` w-full py-2 flex items-center justify-between | relative`}
+          className={`w-full py-1 md:py-2 flex items-center justify-between | relative`}
           style={{
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.01)',
           }}
           ref={header}
         >
-          <div className='flex items-center justify-center'>
+          <div className='w-full md:w-auto flex items-center justify-between md:justify-center'>
             <Logo className='h-7' />
-            <button className={`ml-12 outline-none focus:outline-none`}>
+
+            <button className={`md:ml-12 outline-none focus:outline-none`}>
               <div
                 className='menu h-10 w-10 flex items-center justify-center hover:bg-[#F6F6F6] duration-200 cursor-pointer'
                 onClick={() => setSidebar(!sidebar)}
@@ -241,11 +240,11 @@ export default function Lesson() {
             </button>
           </div>
 
-          <div className='title fcc'>
+          <div className='hidden md:flex items-center justify-center'>
             <h1 className='text-gray-primary'>1. HTML - HTML Kirish</h1>
           </div>
 
-          <div className='flex items-center justify-center'>
+          <div className='hidden md:flex items-center justify-center'>
             <div className='next__actions ml-10 flex items-center justify-center'>
               <div className='| px-5 py-2 | flex items-center justify-center hover:bg-gray-100 rounded-[2px] click:scale | duration-150'>
                 <svg
@@ -288,8 +287,11 @@ export default function Lesson() {
             height: `${height - header?.current?.offsetHeight + 0.5}px`,
           }}
         >
-          <Article width={`33.3333%`} />
-          <div className='w-[66.6666%] flex relative bg-[#020714]'>
+          <div className='w-full md:w-[33.333%]'>
+            <Article width={`100%`} />
+          </div>
+
+          <div className='w-[66.6666%] hidden md:flex relative bg-[#020714]'>
             <IDE
               config={config}
               onTestRun={runTests}
@@ -306,7 +308,7 @@ function ArticleProgressCard({ config: article, active, last }) {
   const icons = {
     project: (
       <svg
-        className='h-5 mr-3'
+        className='h-5 mr-2 md:mr-3'
         viewBox='0 0 15 15'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -321,7 +323,7 @@ function ArticleProgressCard({ config: article, active, last }) {
     ),
     article: (
       <svg
-        className='h-5 | mr-3'
+        className='h-5 | mr-2 md:mr-3'
         viewBox='0 0 15 15'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -337,7 +339,7 @@ function ArticleProgressCard({ config: article, active, last }) {
 
     exercise: (
       <svg
-        className='h-5 mr-3'
+        className='h-5 mr-2 md:mr-3'
         viewBox='0 0 15 15'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -354,7 +356,7 @@ function ArticleProgressCard({ config: article, active, last }) {
   return (
     <div className='article fcb | relative | pb-3 | flex-grow'>
       <h3
-        className={`mr-3 px-3 py-1 text-gray-primary | cursor-pointer | fc flex-1 hover:bg-gray-100 duration-100 ${
+        className={`mr-3 px-2 md:px-3 py-1 text-gray-primary | cursor-pointer | fc flex-1 hover:bg-gray-100 duration-100 ${
           article.completed && 'opacity-40'
         } ${active && 'font-bold bg-gray-100'}`}
       >
@@ -363,11 +365,11 @@ function ArticleProgressCard({ config: article, active, last }) {
       </h3>
 
       {!last && (
-        <div className='h-full top-1/4 right-[1.4rem] w-0.5 bg-[#05F300] absolute'></div>
+        <div className='h-full top-1/4 md:right-[1.4rem] right-[1.15rem] w-0.5 bg-[#05F300] absolute'></div>
       )}
 
       {article.completed ? (
-        <div className='w-6 h-6 bg-[#05F300] rounded-[3px] fcc relative | mr-3'>
+        <div className='w-6 h-6 bg-[#05F300] rounded-[3px] fcc relative | mr-2 md:mr-3'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 512 512'
@@ -384,7 +386,7 @@ function ArticleProgressCard({ config: article, active, last }) {
           </svg>
         </div>
       ) : (
-        <div className='w-6 h-6 bg-[#E0E0E0] rounded-[3px] fcc relative | mr-3'></div>
+        <div className='w-6 h-6 bg-[#E0E0E0] rounded-[3px] fcc relative | md:mr-3 mr-2'></div>
       )}
     </div>
   )

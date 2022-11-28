@@ -1,8 +1,8 @@
-import Exercise from './Article/Exersice'
-import { memo, useState } from 'react'
+import Exercise from './Exercise'
+import { memo } from 'react'
 import Markdown from 'components/Markdown/Markdown'
 
-const article = `### Tabrik
+const markdown = `### Tabrik
 
 Dasturlash dunyosiga xush kelibsiz! 
 
@@ -44,24 +44,6 @@ HTML Teg qanday yozilishini keyingi darsda ko’rib o’tamiz.
 
 Yokida \`<h1>\` ya’ni *heading-1* (o’zb: sarlavha-1), sarlavha elementini tavsiflash uchun ishlatiladi. Va yana shunga o’xshash rasm, video, audio, maqola, iqtibos, yokida urg’u beruvchilar uchun ko’plab teglar mavjud, bularni esa qadamba-qadam eng ko’p va xar bir dasturchi bilishi kerak bo’lgan teglarning barchasini o’rganib, mashqlar bajarib va ularni real proektlarda qo’llab o’rganib boramiz.`
 function Article(props) {
-  const [markdownn] =
-    useState(`Tartibli ro’yxatlar bir jarayondagi turli bosqichlarni, yoki bir nechta ma’lumotlarni ketma-ketlikda sanab o‘tish, va elementlarni birinchidan oxirigacha tartibli holda sanab o’tish uchun kerak bo’ladi.
-
-1. Sport 30 min ⚽
-2. HTML ni o’rganish 1.5 soat 🧑‍💻
-3. Ovqatlanish 30 min 🍗
-
-Shu turdagi tartiblangan roʻyxatlar \`<ol>\` Ota-Ona elementi bilan boshlanib, va uning ichiga istalgan sonli \`<li>\` elementlar kiritiladi. Ro’yxatni tugallash uchun \`</ol>\` oxirida yoziladi:
-
-~~~html
-<ol>
-	<li>Sport 30 min ⚽</li>
-	<li>HTML ni o’rganish 1.5 soat 🧑‍💻</li>
-	<li>Ovqatlanish 30 min 🍗</li>
-</ol>
-~~~
-`)
-  const markdown = article
   return (
     <div className='h-full overflow-auto' style={{ width: props.width }}>
       <article className='px-3' id='article'>
@@ -87,6 +69,7 @@ Shu turdagi tartiblangan roʻyxatlar \`<ol>\` Ota-Ona elementi bilan boshlanib, 
           </svg>
           <h1 className='font-bold text-gray-primary'>Vazifalar</h1>
         </div>
+
         <Exercise
           order={1}
           completed={false}

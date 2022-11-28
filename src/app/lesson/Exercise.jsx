@@ -3,7 +3,7 @@ import Markdown from 'components/Markdown/Markdown'
 import useToggle from 'hooks/useToggle'
 import { Collapse } from 'react-collapse'
 
-function Exersice(props) {
+function Exercise(props) {
   const [solutionActive, toggleSolution] = useToggle(false)
   const [exerciseAcive, toggleExercise] = useToggle(!props.completed)
   const [completed, toggleCompleted] = useToggle(props.completed)
@@ -107,4 +107,4 @@ function Exersice(props) {
   )
 }
 
-export default Exersice
+export default Exercise
