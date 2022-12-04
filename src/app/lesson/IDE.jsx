@@ -135,11 +135,11 @@ function IDE(props) {
 
   return (
     <>
-      <div className='w-1/2 bg-white | order-2'>
+      <div className='w-full md:w-1/2 bg-white | order-2'>
         <Safari onRefresh={reload} onUrlBack={goBack} />
       </div>
 
-      <div className='w-1/2'>
+      <div className='w-full md:w-1/2'>
         <div className='h-full w-full | relative | flex flex-col flex-grow'>
           <div className='tabs bg-black | flex flex-nowrap | w-full overflow-x-auto duration-100'>
             {tabs.map((name) => (
